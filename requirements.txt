@@ -1,0 +1,4 @@
+# MobileAPKCrawler
+PyVirtualDisplay
+selenium
+requests
