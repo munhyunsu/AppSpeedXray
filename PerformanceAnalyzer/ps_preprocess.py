@@ -143,24 +143,48 @@ def export_csv(path, apps):
                 writer.writerow([key] + scene)
 
 
-def main(argv):
-    print('argv', argv)
-    # print(get_ssim('/home/harny/Github/ApplicationPerformance/SpeedIndexCalculator/a5-wlan-runtime/com.shinhan.sbanking/out0009.jpg',
-    #                '/home/harny/Github/ApplicationPerformance/SpeedIndexCalculator/a5-wlan-runtime/com.shinhan.sbanking/out0010.jpg'))
-    apps = get_sp_si(argv[3])
+def main(_):
+    print(FLAGS, _)
+    apps = get_sp_si(FLAGS.speedindex)
     # print(apps)
     apps = get_si(apps)
     # print(apps)
-    apps = get_fp(argv[2], apps)
+    apps = get_fp(FLAGS.temp, apps)
     # print(apps)
-    apps = get_ll(argv[1]+'xml/', apps)
+    apps = get_ll(FLAGS.xmldir, apps)
     # print(apps)
-    apps = get_cs(argv[1]+'top/', apps)
+    apps = get_cs(FLAGS.topdir, apps)
     # print(apps)
-    apps = get_rt(argv[1]+'pcap/', apps)
+    apps = get_rt(FLAGS.pcapdir, apps)
     # print(apps)
-    export_csv(argv[4], apps)
+    export_csv(FLAGS.outputfile, apps)
 
 
 if __name__ == '__main__':
-    sys.exit(main(sys.argv))
+    import argparse
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-i', '--input', type=str, required=True,
+                        help='Root directory of experiment files')
+    parser.add_argument('-t', '--temp', type=str, required=True,
+                        help='Snapshots directory')
+    parser.add_argument('-s', '--speedindex', type=str, required=True,
+                        help='Speedindex result file')
+    parser.add_argument('-o', '--output', type=str, required=True,
+                        help='Output directory')
+    parser.add_argument('-f', '--fps', type=int, default=30,
+                        help='Frame per second of snapshot')
+
+    FLAGS, _ = parser.parse_known_args()
+
+    FLAGS.input = os.path.abspath(os.path.expanduser(FLAGS.input))
+    FLAGS.xmldir = os.path.join(FLAGS.input, 'xml')
+    FLAGS.topdir = os.path.join(FLAGS.input, 'top')
+    FLAGS.pcapdir = os.path.join(FLAGS.input, 'pcap')
+    FLAGS.temp = os.path.abspath(os.path.expanduser(FLAGS.temp))
+    FLAGS.speedindex = os.path.abspath(os.path.expanduser(FLAGS.speedindex))
+    FLAGS.output = os.path.abspath(os.path.expanduser(FLAGS.output))
+    FLAGS.outputfile = os.path.join(FLAGS.output, 'ps-raw.csv')
+
+    main(_)
+

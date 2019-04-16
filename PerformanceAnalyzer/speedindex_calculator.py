@@ -15,13 +15,6 @@ from operator import itemgetter
 
 FLAGS = None
 
-XMLDIR = '/home/harny/Github/ApplicationPerformance/MobileUIAutomator/181211-a5-lte-runtime/xml/'
-MP4DIR = '/home/harny/Github/ApplicationPerformance/MobileUIAutomator/181211-a5-lte-runtime/mp4/'
-TEMPDIR = './a5-lte-runtime/'
-OUTPUTDIR = './output/'
-OUTPUTFILE = '181211-a5-lte-runtime-si.csv'
-FPS = 1
-
 
 def get_split_point(files_list, cut_point):
     list_split_point = list()
@@ -222,3 +215,4 @@ if __name__ == '__main__':
     FLAGS.outputfile = os.path.join(FLAGS.output, 'speedindex.csv')
 
     main()
+
