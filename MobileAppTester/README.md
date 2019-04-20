@@ -1,12 +1,12 @@
-# TODO
-- Android Virtual Device!
-- Detect rendering completion
-- Monitor CPU load
-  - using top
+# Mobile App Tester
+
+## Feature
+- UI Automation
+- Capture screen, network traffic, CPU load, layout information
 
 
 
-# Experiments Step
+## Working description
 1. Search target apk files(or parse target app list)
 2. Capture the packets, and Record the screen, and Log XML layouts
 3. Quickly, execute app using adb
