@@ -10,6 +10,14 @@
 - The mobile app crawler collects APK files of target mobile apps from Android app marketplace and emulator.
 - We have implemented a mobile app crawler with Python Selenium and Android emulator that downloads APK files.
 
+### Requirements
+  ```bash
+  ```
+
+### Usage
+  ```bash
+  ```
+
 
 ## [Mobile APP Tester](https://github.com/munhyunsu/AppSpeedXray/tree/master/MobileAppTester)
 - AppSpeedXray run a Mobile app tester that installs the APK file, invoking the mobile app with the user inputs with monkeyrunner, and that records the packet, XML, CPU usage and video log files.
