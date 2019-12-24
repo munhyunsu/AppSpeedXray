@@ -23,12 +23,21 @@
 - AppSpeedXray run a Mobile app tester that installs the APK file, invoking the mobile app with the user inputs with monkeyrunner, and that records the packet, XML, CPU usage and video log files.
 - In fuzz testing the user input hit ratio is low, because random user events may not often land on the correct position on the menu of the mobile app. Therefore, Mobile app tester devise a clickable component parsing function that extracts the XML layout log files for the mobile app and finds the 'clickable' components that can receive user events.
 
-### Need to integrate with Website
+### Requirements
+  ```bash
+  ```
+
+### Usage
 
 
 ## [Performance Analyzer](https://github.com/munhyunsu/AppSpeedXray/tree/master/PerformanceAnalyzer)
 - A performance analyzer calculates the speed index, mobile app performance metrics, performance score and traffic statistics. For this purpose, performance analyzer consist of scene detector, snapshot generator and similarity calculator modules.
 
+### Requirements
+  ```bash
+  ```
+
+### Usage
 
 
 [components]: https://drive.google.com/uc?id=1RMAGQyN-5mcae4kRVJ1UMsppw-OUhoPj
