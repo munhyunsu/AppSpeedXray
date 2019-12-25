@@ -26,7 +26,7 @@ sudo apt-get install xvfb
 This project depands on python selenium library. So you need to install chrome, selenium chrome webdriver.
 You can download selenium chrome webdriver in [here](https://sites.google.com/a/chromium.org/chromedriver/downloads).
 
-# Usage
+## Usage
 ```bash
 python3 main.py [-h] [--method METHOD] [--desktop DESKTOP]
 ```
@@ -36,10 +36,4 @@ python3 main.py [-h] [--method METHOD] [--desktop DESKTOP]
 
 --desktop DESKTOP : true(desktop mode), false(server mode, no GUI window)
 
-
-# DB Schema
-| app_name | package | img_src | update_date | is_downloaded | category |
-| --------|:-------:| ------:| ----------:| ------------:| --------:|
-| Naver Dictionary & Translator | com.nhn.android | https://lh3.... | 2017년 4월 13일 | 1 | EDUCATION |
-| 암기고래- 말해주는 단어장! | com.belugaedu... | https://lh3.... | 2017년 4월 17일 | 1 | EDUCATION|
 
